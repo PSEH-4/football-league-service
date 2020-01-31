@@ -1,44 +1,41 @@
 package com.sapient.assement.football.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.assement.football.api.CountryService;
+import com.sapient.assement.football.api.country.CountryService;
 import com.sapient.assement.football.messaging.CountryResponse;
 
-@Controller("/country")
+@RestController
+@RequestMapping("/countries")
 public class CountryController {
 
 	@Autowired
 	private CountryService countryService;
 
 	@GetMapping
-	public Response getAllCountries() {
+	public List<CountryResponse> getAllCountries() {
 		List<CountryResponse> response = countryService.getAllCountries();
-		if (CollectionUtils.isEmpty(response)) {
-			return Response.ok(response).build();
+		if (!CollectionUtils.isEmpty(response)) {
+			return response;
 		}
 		else {
-			return Response.status(Status.NOT_FOUND).build();
+			return new ArrayList<CountryResponse>();
 		}
 	}
 
 	@GetMapping("/{country_id}")
-	public Response getAllCountry(@PathVariable("country_id") String countryId) {
-		CountryResponse response = countryService.getCountryById(countryId);
-		if (response != null) {
-			return Response.ok(response).build();
-		}
-		else {
-			return Response.status(Status.NOT_FOUND).build();
-		}
+	public CountryResponse getAllCountry(@PathVariable("country_id") String countryId) {
+		return countryService.getCountryById(countryId);
 	}
 }

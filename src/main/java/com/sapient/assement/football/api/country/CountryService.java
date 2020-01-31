@@ -1,4 +1,4 @@
-package com.sapient.assement.football.api;
+package com.sapient.assement.football.api.country;
 
 import java.util.List;
 

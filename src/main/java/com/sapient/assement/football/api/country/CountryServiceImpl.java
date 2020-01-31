@@ -1,4 +1,4 @@
-package com.sapient.assement.football.api;
+package com.sapient.assement.football.api.country;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class CountryServiceImpl implements CountryService {
 			return result.get();
 		}
 		else {
-			return null;
+			return new CountryResponse();
 		}
 	}
 

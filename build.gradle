@@ -17,6 +17,10 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.4.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: '2.2.4.RELEASE'
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
+	
 }
 
 test {

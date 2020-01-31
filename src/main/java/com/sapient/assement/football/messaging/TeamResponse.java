@@ -1,6 +1,11 @@
 package com.sapient.assement.football.messaging;
 
-public class TeamResponse {
+public class TeamResponse extends ResponseModel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3171094657756281297L;
 
 	private String teamId;
 	

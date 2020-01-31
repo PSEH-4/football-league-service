@@ -1,16 +1,25 @@
 package com.sapient.assement.football.messaging;
 
-public class LeagueResponse {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class LeagueResponse extends ResponseModel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6587633810235036448L;
+
+	@JsonProperty("league_id")
 	private String leagueId;
 	
+	@JsonProperty("league_name")
 	private String leagueName;
 
-	private String leagueStartDate;
+	@JsonProperty("country_id")
+	private String countryId;
 
-	private String leagueEndDate;
-
-	private CountryResponse leagueHostedIn;
+	@JsonProperty("country_name")
+	private String countryName;
 
 	public String getLeagueId() {
 		return leagueId;
@@ -28,28 +37,20 @@ public class LeagueResponse {
 		this.leagueName = leagueName;
 	}
 
-	public String getLeagueStartDate() {
-		return leagueStartDate;
+	public String getCountryId() {
+		return countryId;
 	}
 
-	public void setLeagueStartDate(String leagueStartDate) {
-		this.leagueStartDate = leagueStartDate;
+	public void setCountryId(String countryId) {
+		this.countryId = countryId;
 	}
 
-	public String getLeagueEndDate() {
-		return leagueEndDate;
+	public String getCountryName() {
+		return countryName;
 	}
 
-	public void setLeagueEndDate(String leagueEndDate) {
-		this.leagueEndDate = leagueEndDate;
-	}
-
-	public CountryResponse getLeagueHostedIn() {
-		return leagueHostedIn;
-	}
-
-	public void setLeagueHostedIn(CountryResponse leagueHostedIn) {
-		this.leagueHostedIn = leagueHostedIn;
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
 	}
 
 	@Override
@@ -59,13 +60,12 @@ public class LeagueResponse {
 		builder.append(leagueId);
 		builder.append(", leagueName=");
 		builder.append(leagueName);
-		builder.append(", leagueStartDate=");
-		builder.append(leagueStartDate);
-		builder.append(", leagueEndDate=");
-		builder.append(leagueEndDate);
-		builder.append(", leagueHostedIn=");
-		builder.append(leagueHostedIn);
+		builder.append(", countryId=");
+		builder.append(countryId);
+		builder.append(", countryName=");
+		builder.append(countryName);
 		builder.append("]");
 		return builder.toString();
 	}
+
 }

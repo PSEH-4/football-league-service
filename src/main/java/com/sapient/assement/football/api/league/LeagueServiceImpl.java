@@ -29,18 +29,18 @@ public class LeagueServiceImpl implements LeagueService {
 	}
 
 	private List<LeagueResponse> buildLeagueResponse() {
-		List<LeagueResponse> countries = new ArrayList<>();
-		countries.add(addLeague("LG000001", "FIFA"));
-		countries.add(addLeague("LG000002", "EFL"));
-		countries.add(addLeague("LG000003", "UEFA Europa League"));
-		countries.add(addLeague("LG000004", "UEFA Champions League"));
-		countries.add(addLeague("LG000005", "Serie A"));
-		countries.add(addLeague("LG000006", "FA Cup"));
-		countries.add(addLeague("LG000007", "La Liga"));
-		countries.add(addLeague("LG000008", "ISL"));
-		countries.add(addLeague("LG000009", "AFC Cup"));
-		countries.add(addLeague("LG000010", "NFL"));
-		return countries;
+		List<LeagueResponse> leagues = new ArrayList<>();
+		leagues.add(addLeague("LG000001", "FIFA"));
+		leagues.add(addLeague("LG000002", "EFL"));
+		leagues.add(addLeague("LG000003", "UEFA Europa League"));
+		leagues.add(addLeague("LG000004", "UEFA Champions League"));
+		leagues.add(addLeague("LG000005", "Serie A"));
+		leagues.add(addLeague("LG000006", "FA Cup"));
+		leagues.add(addLeague("LG000007", "La Liga"));
+		leagues.add(addLeague("LG000008", "ISL"));
+		leagues.add(addLeague("LG000009", "AFC Cup"));
+		leagues.add(addLeague("LG000010", "NFL"));
+		return leagues;
 	}
 
 	private LeagueResponse addLeague(String leagueId, String leagueName) {

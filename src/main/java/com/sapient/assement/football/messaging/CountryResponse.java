@@ -1,9 +1,18 @@
 package com.sapient.assement.football.messaging;
 
-public class CountryResponse {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class CountryResponse extends ResponseModel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8648502851695486297L;
+
+	@JsonProperty("country_id")
 	private String countryId;
-	
+
+	@JsonProperty("country_name")
 	private String countryName;
 
 	public String getCountryId() {

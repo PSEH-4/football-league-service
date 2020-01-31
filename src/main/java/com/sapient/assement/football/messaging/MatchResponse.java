@@ -2,7 +2,12 @@ package com.sapient.assement.football.messaging;
 
 import java.util.Date;
 
-public class MatchResponse {
+public class MatchResponse extends ResponseModel  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -554715490601535326L;
 
 	private String matchId;
 

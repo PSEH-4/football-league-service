@@ -11,7 +11,7 @@ pipeline {
 
 		stage('Build') {
 			steps {
-				sh './gradlew clean build distRpm --refresh-dependencies --stacktrace'
+				sh './gradlew clean build distDocker --refresh-dependencies --stacktrace'
 			}
 		}
 	}

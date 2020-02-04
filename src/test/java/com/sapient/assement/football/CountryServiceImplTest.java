@@ -22,16 +22,5 @@ public class CountryServiceImplTest {
 		assertNotNull(countries);
 	}
 
-	@Test
-	public void getCountryByIdSuccess() {
-		CountryResponse country = countryService.getCountryById("CN000004");
-		assertNotNull(country);
-	}
 	
-	@Test
-	public void getCountryByIdFailed() {
-		CountryResponse country = countryService.getCountryById("CN000040");
-		assertEquals(null, country.getCountryId());
-		assertEquals(null, country.getCountryName());
-	}
 }

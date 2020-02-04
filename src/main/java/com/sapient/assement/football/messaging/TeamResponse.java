@@ -1,17 +1,28 @@
 package com.sapient.assement.football.messaging;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TeamResponse extends ResponseModel {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3171094657756281297L;
+	private static final long serialVersionUID = 3746499358669749935L;
 
+	@JsonProperty("team_key")
 	private String teamId;
-	
+
+	@JsonProperty("team_name")
 	private String teamName;
 
-	private Integer points;
+	@JsonProperty("team_badge")
+	private String teamBadge;
+	
+	private List<PlayerResponse> players;
+	
+	private List<CoachResponse> coaches;
 
 	public String getTeamId() {
 		return teamId;
@@ -29,12 +40,28 @@ public class TeamResponse extends ResponseModel {
 		this.teamName = teamName;
 	}
 
-	public Integer getPoints() {
-		return points;
+	public String getTeamBadge() {
+		return teamBadge;
 	}
 
-	public void setPoints(Integer points) {
-		this.points = points;
+	public void setTeamBadge(String teamBadge) {
+		this.teamBadge = teamBadge;
+	}
+
+	public List<PlayerResponse> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(List<PlayerResponse> players) {
+		this.players = players;
+	}
+
+	public List<CoachResponse> getCoaches() {
+		return coaches;
+	}
+
+	public void setCoaches(List<CoachResponse> coaches) {
+		this.coaches = coaches;
 	}
 
 	@Override
@@ -44,10 +71,15 @@ public class TeamResponse extends ResponseModel {
 		builder.append(teamId);
 		builder.append(", teamName=");
 		builder.append(teamName);
-		builder.append(", points=");
-		builder.append(points);
+		builder.append(", teamBadge=");
+		builder.append(teamBadge);
+		builder.append(", players=");
+		builder.append(players);
+		builder.append(", coaches=");
+		builder.append(coaches);
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	
 }

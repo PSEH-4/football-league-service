@@ -3,9 +3,6 @@ package com.sapient.assement.football.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +31,9 @@ public class CountryController {
 		}
 	}
 
-	@GetMapping("/{country_id}")
-	public CountryResponse getAllCountry(@PathVariable("country_id") String countryId) {
-		return countryService.getCountryById(countryId);
+	@GetMapping("/{country_name}")
+	public CountryResponse getCountryByName(@PathVariable("country_name") String countryName) {
+		return countryService.getCountryByName(countryName);
 	}
+
 }

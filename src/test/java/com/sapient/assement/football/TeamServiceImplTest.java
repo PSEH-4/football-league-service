@@ -22,16 +22,5 @@ public class TeamServiceImplTest {
 		assertNotNull(countries);
 	}
 
-	@Test
-	public void getTeamByIdSuccess() {
-		TeamResponse team = teamService.getTeamById("TM000009");
-		assertNotNull(team);
-	}
 	
-	@Test
-	public void getTeamByIdFailed() {
-		TeamResponse team = teamService.getTeamById("TM000019");
-		assertEquals(null, team.getTeamId());
-		assertEquals(null, team.getTeamName());
-	}
 }

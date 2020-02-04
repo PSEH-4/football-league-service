@@ -6,5 +6,5 @@ import com.sapient.assement.football.messaging.TeamStandingResponse;
 
 public interface TeamStandingService {
 
-	List<TeamStandingResponse> getAllTeamStandings();
+	List<TeamStandingResponse> getStandingByLeagueId(String leagueId);
 }

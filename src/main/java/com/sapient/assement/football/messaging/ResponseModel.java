@@ -7,6 +7,6 @@ public class ResponseModel implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 9148027974638493641L;
+	private static final long serialVersionUID = 8999127509976105146L;
 
 }

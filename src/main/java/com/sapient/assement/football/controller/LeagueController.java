@@ -14,15 +14,15 @@ import com.sapient.assement.football.api.league.LeagueService;
 import com.sapient.assement.football.messaging.LeagueResponse;
 
 @RestController
-@RequestMapping("/leagues")
+@RequestMapping("/countries/{country_name}/leagues")
 public class LeagueController {
 
 	@Autowired
 	private LeagueService leagueService;
 
 	@GetMapping
-	public List<LeagueResponse> getAllCountries() {
-		List<LeagueResponse> response = leagueService.getAllLeagues();
+	public List<LeagueResponse> getAllLeaguesByCountry(@PathVariable("country_name") String countryName) {
+		List<LeagueResponse> response = leagueService.getAllLeaguesByCountry(countryName);
 		if (!CollectionUtils.isEmpty(response)) {
 			return response;
 		}
@@ -31,8 +31,4 @@ public class LeagueController {
 		}
 	}
 
-	@GetMapping("/{league_id}")
-	public LeagueResponse getAllLeague(@PathVariable("league_id") String leagueId) {
-		return leagueService.getLeagueById(leagueId);
-	}
 }

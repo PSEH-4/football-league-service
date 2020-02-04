@@ -7,6 +7,7 @@ import com.sapient.assement.football.messaging.CountryResponse;
 public interface CountryService {
 
 	List<CountryResponse> getAllCountries();
-	
-	CountryResponse getCountryById(String countryId);
+
+	CountryResponse getCountryByName(String countryName);
+
 }

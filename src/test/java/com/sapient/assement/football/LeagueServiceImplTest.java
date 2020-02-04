@@ -18,20 +18,8 @@ public class LeagueServiceImplTest {
 
 	@Test
 	public void getAllCountriesSuccess() {
-		List<LeagueResponse> countries = leagueService.getAllLeagues();
+		List<LeagueResponse> countries = leagueService.getAllLeaguesByCountry("England");
 		assertNotNull(countries);
 	}
-
-	@Test
-	public void getLeagueByIdSuccess() {
-		LeagueResponse league = leagueService.getLeagueById("LG000001");
-		assertNotNull(league);
-	}
 	
-	@Test
-	public void getLeagueByIdFailed() {
-		LeagueResponse league = leagueService.getLeagueById("LG000100");
-		assertEquals(null, league.getLeagueId());
-		assertEquals(null, league.getLeagueName());
-	}
 }

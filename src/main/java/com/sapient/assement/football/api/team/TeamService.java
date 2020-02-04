@@ -8,5 +8,5 @@ public interface TeamService {
 
 	List<TeamResponse> getAllTeams();
 	
-	TeamResponse getTeamById(String teamId);
+	List<TeamResponse> getTeamByLeagueId(String leagueId);
 }

@@ -7,7 +7,5 @@ import com.sapient.assement.football.messaging.LeagueResponse;
 
 public interface LeagueService {
 
-	List<LeagueResponse> getAllLeagues();
-	
-	LeagueResponse getLeagueById(String leagueId);
+	List<LeagueResponse> getAllLeaguesByCountry(String countryName);
 }
